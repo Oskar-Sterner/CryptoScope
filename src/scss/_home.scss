@@ -1,0 +1,72 @@
+@use "variables" as var;
+@use "mixins" as m;
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Wix Madefor Display', sans-serif;
+    background-color: var.$bg;
+    color: white;
+    background-image: url("src/assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    table {
+        background-color: var.$bg-foreground;
+        padding: 10px;
+        border-radius: 25px;
+        width: 80%;
+        margin-bottom: 20px;
+        @include m.tablet {
+            width: 100%;
+            font-size: 1.3vw;
+        }
+        th {
+            text-decoration: underline;
+            text-decoration-color: var.$primary;
+            i{
+                transition: 300ms;
+                &:hover{
+                    color: var.$primary;
+                    transform: scale(1.05);
+                    cursor: pointer;
+                }
+            }
+        }
+        td {
+            text-align: center;
+        }
+        #name {
+            display: flex;
+            width: 210px;
+            margin-right: -100px;
+            justify-content: flex-start;
+            align-items: center;
+            img {
+                margin-right: 10px;
+            }
+        }
+        #marketCap {
+            width: 150px;
+        }
+        #hVolume {
+            width: 180px;
+        }
+        #change {
+            width: 120px;
+        }
+    }
+
+    #logo {
+        width: 300px;
+        margin: 20px 0px 20px 0px;
+    }
+
+}
