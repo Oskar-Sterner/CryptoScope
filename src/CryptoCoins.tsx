@@ -152,6 +152,9 @@ function CryptoCoins() {
                 <img
                   src={`src/assets/icons/${crypto.symbol}.png`}
                   alt={crypto.symbol}
+                  onError={(e) => {
+                    e.currentTarget.src = "https://unsplash.it/32/32";
+                  }}
                 />{" "}
                 {crypto.name}
               </td>

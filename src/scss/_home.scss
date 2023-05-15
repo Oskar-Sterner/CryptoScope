@@ -19,7 +19,8 @@ body {
     align-items: center;
 
     table {
-        background-color: var.$bg-foreground;
+        background: rgb(48,44,60);
+        background: linear-gradient(20deg, rgba(48,44,60,1) 0%, rgba(47,44,54,1) 100%);
         padding: 10px;
         border-radius: 25px;
         width: 80%;
@@ -28,20 +29,42 @@ body {
             width: 100%;
             font-size: 1.3vw;
         }
-        th {
-            text-decoration: underline;
-            text-decoration-color: var.$primary;
-            i{
-                transition: 300ms;
-                &:hover{
-                    color: var.$primary;
-                    transform: scale(1.05);
-                    cursor: pointer;
+        tbody{
+            background-color: #201c24;
+
+            tr:first-child td:first-child {
+                border-top-left-radius: 15px;
+            }
+            
+            tr:first-child td:last-child {
+                border-top-right-radius: 15px;
+            }
+            
+            tr:last-child td:first-child {
+                border-bottom-left-radius: 15px;
+            }
+            
+            tr:last-child td:last-child {
+                border-bottom-right-radius: 15px;
+            }
+        }
+        thead{
+            th {
+                text-decoration: underline;
+                text-decoration-color: var.$primary;
+                i{
+                    transition: 300ms;
+                    &:hover{
+                        color: var.$primary;
+                        transform: scale(1.05);
+                        cursor: pointer;
+                    }
                 }
             }
         }
         td {
             text-align: center;
+            padding: 10px;
         }
         #name {
             display: flex;
@@ -51,6 +74,7 @@ body {
             align-items: center;
             img {
                 margin-right: 10px;
+                border-radius: 50%;
             }
         }
         #marketCap {
